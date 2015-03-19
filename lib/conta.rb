@@ -14,13 +14,22 @@ class Conta
       false
     else
      @saldo = @saldo - valor
+     true
     end
   end
 
   def depositar(valor)
     @saldo = @saldo + valor
   end
-  
+
+  def transfere(conta_destino, valor)
+    if(sacar(valor))
+      conta_destino.depositar(valor)
+    else
+      false
+    end
+  end
+
   def no_limite?
     @saldo < 0
   end
