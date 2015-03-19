@@ -1,10 +1,10 @@
 class Conta
 
-  attr_accessor :numero, :cliente, :saldo, :limite
+  attr_accessor :numero, :titular, :saldo, :limite
 
   def initialize(dados)
     @numero= dados[:numero]
-    @cliente= dados[:cliente]
+    @titular= dados[:titular]
     @saldo= dados[:saldo]
     @limite= dados[:limite]
   end
@@ -35,6 +35,7 @@ class Conta
   end
 
   def ==(conta)
-    @numero == conta.numero && @saldo == conta.saldo && @limite == conta.limite && @cliente == conta.cliente
+    false unless conta.is_a?(Conta)
+    @numero == conta.numero && @saldo == conta.saldo && @limite == conta.limite && @titular == conta.titular
   end
 end
