@@ -14,7 +14,29 @@ describe Conta do
     saldo_anterior = conta.saldo
     saque = 200
     conta.sacar(saque)
-    expect(conta.saldo).eq to saldo_anterior - saque
+    expect(conta.saldo).to eq(saldo_anterior - saque)
+  end
+
+  it "deveria ter um novo saldo depois de um deposito" do
+    conta = cria_conta
+    saldo_anterior = conta.saldo
+    deposito = 500
+    conta.depositar(deposito)
+    expect(conta.saldo).to eq(saldo_anterior + deposito)
+  end
+
+  it "deveria retorna false quando não for possível sacar" do
+    conta = cria_conta
+    saque = 2000
+    expect(conta.sacar(saque)).to eq false
+  end
+
+  it "deveria deixar a conta negativa quando o saque usar o limite" do
+    conta = cria_conta
+    saque = 1500
+    saldo_anterior = conta.saldo
+    conta.sacar(saque)
+    expect(conta.saldo).to eq(saldo_anterior - saque)
   end
 
   def cria_conta(numero="2303-2", nome="Jose da Silva", saldo=1000.10, limite=500)
