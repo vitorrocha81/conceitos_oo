@@ -36,6 +36,6 @@ class Conta
 
   def ==(conta)
     false unless conta.is_a?(Conta)
-    @numero == conta.numero && @saldo == conta.saldo && @limite == conta.limite && @titular == conta.titular
+    @numero == conta.numero && @saldo == conta.saldo && @limite == conta.limite && @titular.nome == conta.titular.nome
   end
 end
