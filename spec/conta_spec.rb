@@ -6,7 +6,7 @@ describe Conta do
     nome = "Jose da Silva"
     saldo = 1000.10
     limite = 500
-    conta = Conta.new(numero: numero, nome: nome, saldo: saldo, limite: limite)
+    conta = Conta.new(numero, nome, saldo, limite)
     expect(conta.numero).to eq numero
     expect(conta.nome).to eq nome
     expect(conta.limite).to eq limite
