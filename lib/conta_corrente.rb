@@ -9,4 +9,8 @@ class ContaCorrente < Conta
     valor -= TAXA_DEPOSITO
     super(valor)
   end
+
+  def atualizar
+  end
+
 end
