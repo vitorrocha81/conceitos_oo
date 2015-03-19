@@ -10,7 +10,7 @@ class Conta
   end
 
   def sacar(valor)
-    if(valor > @saldo)
+    if(valor > @saldo + @limite)
       false
     else
      @saldo = @saldo - valor
@@ -20,5 +20,12 @@ class Conta
   def depositar(valor)
     @saldo = @saldo + valor
   end
+  
+  def no_limite?
+    @saldo < 0
+  end
 
+  def ==(conta)
+    @numero == conta.numero && @saldo == conta.saldo && @limite == conta.limite && @nome == conta.nome
+  end
 end
