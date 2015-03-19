@@ -72,6 +72,14 @@ describe Conta do
       to eq(false)
   end
 
+  it "titular deveria ser um Cliente" do
+    pending
+    # Bonus
+    # altere conta e os testes para ter titular ao inves de novo
+    # titular deveria ser um objeto do tipo Cliente
+    expect(conta.titular).to be_a(Cliente)
+  end
+
   def cria_conta(numero="2303-2", nome="Jose da Silva", saldo=1000.10, limite=500)
     Conta.new(numero: numero, nome: nome, saldo: saldo, limite: limite)
   end
