@@ -57,6 +57,25 @@ describe Conta do
     expect(conta1).to eq conta2
   end
 
+  it "deveria ter novo saldo após tranferencia" do
+    conta_origem = cria_conta
+    saldo_anterior_origem = conta_origem.saldo
+    conta_destino = cria_conta("3432-2", "Zenildo Bispo", 4000.54)
+    saldo_anterior_destino = conta_destino.saldo
+    valor_transferencia = 560.40
+    conta_origem.transfere(conta_destino, valor_transferencia)
+    expect(conta_origem.saldo).to eq(saldo_anterior_origem - valor_transferencia)
+    expect(conta_destino.saldo).to eq(saldo_anterior_destino + valor_transferencia)
+  end
+
+  it "deveria ser false quando não for possivel transferir" do
+    conta_origem = cria_conta
+    conta_destino = cria_conta("3432-2", "Zenildo Bispo", 4000.54)
+    valor_transferencia = 1560.40
+    expect(conta_origem.transfere(conta_destino, valor_transferencia)).
+      to eq(false)
+  end
+
   def cria_conta(numero="2303-2", nome="Jose da Silva", saldo=1000.10, limite=500)
     Conta.new(numero: numero, nome: nome, saldo: saldo, limite: limite)
   end
