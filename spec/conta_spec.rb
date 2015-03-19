@@ -43,6 +43,20 @@ describe Conta do
     expect(conta.saldo).to eq(saldo_anterior - saque)
   end
 
+  it "deveria mostrar que a conta está usando limite" do
+    conta = cria_conta
+    saque = 1500
+    saldo_anterior = conta.saldo
+    conta.sacar(saque)
+    expect(conta).to be_no_limite
+  end
+
+  it "duas contas com mesmos dados deveriam ser iguais" do
+    conta1 = cria_conta
+    conta2 = cria_conta
+    expect(conta1).to eq conta2
+  end
+
   def cria_conta(numero="2303-2", nome="Jose da Silva", saldo=1000.10, limite=500)
     Conta.new(numero: numero, nome: nome, saldo: saldo, limite: limite)
   end
