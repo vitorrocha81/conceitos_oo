@@ -79,7 +79,8 @@ describe Conta do
   it "titular deveria ser um Cliente" do
     pending
     # Bonus
-    # altere conta para ter titular ao inves de novo
+    # altere conta para ter titular ao inves de nome
+    # altere tambem os testes para que passem nesse nova versão
     # titular deveria ser um objeto do tipo Cliente
     expect(conta.titular).to be_a(Cliente)
   end
