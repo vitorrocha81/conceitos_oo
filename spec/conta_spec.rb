@@ -2,6 +2,10 @@ require 'spec_helper'
 
 describe Conta do
   it "deveria conseguir criar um objeto do tipo Conta" do
+    numero = "2303-2"
+    nome = "Jose da Silva"
+    saldo = 1000.10
+    limite = 500
     conta = cria_conta
     expect(conta.numero).to eq numero
     expect(conta.nome).to eq nome
@@ -75,7 +79,8 @@ describe Conta do
   it "titular deveria ser um Cliente" do
     pending
     # Bonus
-    # altere conta para ter titular ao inves de novo
+    # altere conta para ter titular ao inves de nome
+    # altere tambem os testes para que passem nesse nova versão
     # titular deveria ser um objeto do tipo Cliente
     expect(conta.titular).to be_a(Cliente)
   end
