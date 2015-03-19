@@ -15,4 +15,8 @@ describe ContaCorrente do
     saldo_anterior = conta.saldo
     expect(conta.saldo).to eq(saldo_anterior)
   end
+
+  def conta_corrente
+    Conta.new(numero: numero, titular: Cliente.new("Jose da Silva"), saldo: saldo, limite: limite)
+  end
 end
