@@ -13,10 +13,11 @@ describe ContaCorrente do
   it "deveria não gerar juros quando atualizada" do
     conta = conta_corrente
     saldo_anterior = conta.saldo
+    conta.atualizar
     expect(conta.saldo).to eq(saldo_anterior)
   end
 
   def conta_corrente
-    ContaCorrente.new(numero: numero, titular: Cliente.new("Jose da Silva"), saldo: saldo, limite: limite)
+    ContaCorrente.new(numero: 1234, titular: Cliente.new("Jose da Silva"), saldo: 1000, limite: 500)
   end
 end
