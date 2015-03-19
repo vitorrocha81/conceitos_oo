@@ -17,6 +17,6 @@ describe ContaCorrente do
   end
 
   def conta_corrente
-    Conta.new(numero: numero, titular: Cliente.new("Jose da Silva"), saldo: saldo, limite: limite)
+    ContaCorrente.new(numero: numero, titular: Cliente.new("Jose da Silva"), saldo: saldo, limite: limite)
   end
 end
