@@ -14,7 +14,6 @@ describe Conta do
   end
 
   it "deveria ter um novo saldo quando houver um saque" do
-    pending
     conta = cria_conta
     saldo_anterior = conta.saldo
     saque = 200
@@ -23,7 +22,6 @@ describe Conta do
   end
 
   it "deveria ter um novo saldo depois de um deposito" do
-    pending
     conta = cria_conta
     saldo_anterior = conta.saldo
     deposito = 500
@@ -32,14 +30,12 @@ describe Conta do
   end
 
   it "deveria retorna false quando não for possível sacar" do
-    pending
     conta = cria_conta
     saque = 2000
     expect(conta.sacar(saque)).to eq false
   end
 
   it "deveria deixar a conta negativa quando o saque usar o limite" do
-    pending
     conta = cria_conta
     saque = 1500
     saldo_anterior = conta.saldo
@@ -48,7 +44,6 @@ describe Conta do
   end
 
   it "deveria mostrar que a conta está usando limite" do
-    pending
     conta = cria_conta
     saque = 1500
     saldo_anterior = conta.saldo
