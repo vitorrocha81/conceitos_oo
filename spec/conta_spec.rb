@@ -52,7 +52,6 @@ describe Conta do
   end
 
   it "duas contas com mesmos dados deveriam ser iguais" do
-    pending
     conta1 = cria_conta
     conta2 = cria_conta
     expect(conta1).to eq conta2

@@ -1,7 +1,7 @@
 class Conta
 attr_accessor :numero, :nome, :saldo, :limite
  def new
-  conta = Conta.new    
+  conta = Conta.new 
  end
 
  def initialize (conta_params)
@@ -12,20 +12,22 @@ attr_accessor :numero, :nome, :saldo, :limite
  end
 
  def sacar(valor)
-    if valor > saldo + limite
-      return false
-    else
+  if valor > saldo + limite
+    return false
+  else
     @saldo = (saldo - valor)
-    end
   end
+ end
 
  def depositar(deposito)
   @saldo = (saldo + deposito)
  end
 
- def no_limite(valor)
-    if valor > (saldo - limite)
-      return true
-    end
-  end
+ def no_limite?
+   @saldo = limite
+ end
+
+ def ==(conta)
+  @numero == conta.numero && @nome == conta.nome && @saldo == conta.saldo && @limite == conta.limite  
+ end
 end
