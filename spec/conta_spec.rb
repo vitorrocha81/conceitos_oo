@@ -58,7 +58,6 @@ describe Conta do
   end
 
   it "deveria ter novo saldo após tranferencia" do
-    pending
     conta_origem = cria_conta
     saldo_anterior_origem = conta_origem.saldo
     conta_destino = cria_conta("3432-2", "Zenildo Bispo", 4000.54)
